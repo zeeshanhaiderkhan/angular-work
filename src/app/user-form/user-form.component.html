@@ -1,0 +1,26 @@
+
+<div fxLayout="row" fxLayoutGap="20px" class="user-form">
+    <form [formGroup]="profileForm">
+    <div fxLayout="row">
+        <mat-form-field appearance="fill">
+            <mat-label>Input</mat-label>
+            <input matInput  formControlName="firstname">
+        </mat-form-field>
+    </div>
+    <div fxLayout="row">
+        <mat-form-field appearance="fill">
+            <mat-label>Input</mat-label>
+            <input matInput  formControlName="lastname">
+        </mat-form-field>
+    </div>
+    </form>
+</div>
+<form [formGroup]="profileForm">
+
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName">
+  
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName">
+  
+  </form>

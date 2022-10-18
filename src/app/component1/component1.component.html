@@ -1,0 +1,31 @@
+<div fxLayout="row" fxLayoutAlign="center">
+    <div >
+            <h1 *ngIf="name">{{name}}</h1>
+    </div>
+    <div >
+            <h2 *ngIf="id">{{id}}</h2> 
+    </div>
+    
+</div>
+
+
+<div>
+    <div class="name">
+        
+    </div>
+    <div class="idd">
+        <h2 *ngIf="id">{{id}}</h2>
+    </div>
+    <div class="change-name-btn">
+        <button title="change name" (click)="changeName()" >Change Name</button>
+    </div>
+    <div class="change-id-btn">
+        <button title="change id" (click)="changeId()">Change Id </button>
+    </div>
+    <div class="change-both-btn">
+        <button title="change both" (click)="changeBoth()">Change Both </button>
+    </div>
+</div>
+
+<mat-slider min="1" max="100" step="2"  value="46"></mat-slider>
+<button mat-raised-button color="primary">Primary</button>
