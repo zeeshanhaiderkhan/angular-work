@@ -1,26 +1,39 @@
 
 <div fxLayout="row" fxLayoutGap="20px" class="user-form">
-    <form [formGroup]="profileForm">
+    <form [formGroup]="profileForm" >
     <div fxLayout="row">
-        <mat-form-field appearance="fill">
-            <mat-label>Input</mat-label>
-            <input matInput  formControlName="firstname">
+        <mat-form-field appearance="fill" >
+            <mat-label>E-mail</mat-label>
+            <input matInput formControlName="email" name="email">
         </mat-form-field>
     </div>
     <div fxLayout="row">
         <mat-form-field appearance="fill">
-            <mat-label>Input</mat-label>
-            <input matInput  formControlName="lastname">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" name="name" name="name">
         </mat-form-field>
     </div>
-    </form>
-</div>
-<form [formGroup]="profileForm">
 
-    <label for="first-name">First Name: </label>
-    <input id="first-name" type="text" formControlName="firstName">
-  
-    <label for="last-name">Last Name: </label>
-    <input id="last-name" type="text" formControlName="lastName">
-  
-  </form>
+
+    <ng-container formArrayName="skills">
+        <ng-container *ngFor="let s of skills().controls; let index = index">
+            <div [formGroupName]="index" fxLayout="row" fxLayoutGap="20px">
+                <mat-form-field appearance="fill" >
+                    <mat-label>Skill</mat-label>
+                    <input matInput formControlName="skill" name="skill">
+                </mat-form-field>
+                <mat-form-field appearance="fill" >
+                    <mat-label>Exp</mat-label>
+                    <input matInput formControlName="exp" name="exp">
+                </mat-form-field>              
+            </div>
+        </ng-container>
+    </ng-container>
+    
+    <button mat-raised-button color="primary" (click)="addSkills()">Add Skill</button>
+
+    </form>
+    
+    
+</div>
+
